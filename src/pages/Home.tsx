@@ -34,10 +34,10 @@ export default function Home() {
                             duration: 0.8,
                             ease: "easeInOut",
                         }}
-                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-24 md:py-0"
+                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center justify-center min-h-[calc(100vh-80px)]"
                     >
                         {/* Text Content */}
-                        <div className="text-left order-2 md:order-1">
+                        <div className="text-left order-2 md:order-1 flex flex-col justify-center">
                             <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6 leading-tight">
                                 Lebih Dari Sekadar <br /> Tempat Tidur.
                             </h1>
@@ -75,8 +75,8 @@ export default function Home() {
                         </div>
 
                         {/* Hero Image */}
-                        <div className="relative order-1 md:order-2 w-full">
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 rotate-0 md:rotate-2 hover:rotate-0 transition duration-500 group">
+                        <div className="relative order-1 md:order-2 w-full flex items-center justify-center">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 rotate-0 md:rotate-2 hover:rotate-0 transition duration-500 group w-full">
                                 <img
                                     src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
                                     alt="Modern Interior"
@@ -94,10 +94,7 @@ export default function Home() {
                         </div>
                     </motion.div>
                 </AuroraBackground>
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-neutral-500 z-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
-                </div>
+                {/* Scroll Indicator Removed */}
             </div>
 
             {/* Why Choose Us Section */}
