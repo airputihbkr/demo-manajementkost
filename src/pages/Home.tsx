@@ -34,10 +34,10 @@ export default function Home() {
                             duration: 0.8,
                             ease: "easeInOut",
                         }}
-                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center h-full py-20 md:py-0"
+                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full py-24 md:py-0"
                     >
                         {/* Text Content */}
-                        <div className="text-left">
+                        <div className="text-left order-2 md:order-1">
                             <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6 leading-tight">
                                 Lebih Dari Sekadar <br /> Tempat Tidur.
                             </h1>
@@ -50,19 +50,19 @@ export default function Home() {
                             <div className="flex flex-col sm:flex-row gap-4 mb-8">
                                 <a
                                     href="#catalog"
-                                    className="px-8 py-3 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-lg shadow-teal-500/20 text-center"
+                                    className="px-8 py-4 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-lg shadow-teal-500/20 text-center"
                                 >
                                     Pilih Kamar Anda
                                 </a>
                                 <Link
                                     to="/login"
-                                    className="px-8 py-3 rounded-full border border-neutral-700 hover:bg-neutral-800 text-neutral-300 font-medium transition text-center"
+                                    className="px-8 py-4 rounded-full border border-neutral-700 hover:bg-neutral-800 text-neutral-300 font-medium transition text-center"
                                 >
                                     Login Pemilik
                                 </Link>
                             </div>
 
-                            <div className="flex items-center gap-4 text-sm text-neutral-500 font-light">
+                            <div className="flex items-center gap-4 text-sm text-neutral-500 font-light hidden sm:flex">
                                 <div className="flex -space-x-2">
                                     {[1, 2, 3, 4].map(i => (
                                         <div key={i} className="w-8 h-8 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center text-xs overflow-hidden">
@@ -75,22 +75,22 @@ export default function Home() {
                         </div>
 
                         {/* Hero Image */}
-                        <div className="relative hidden md:block">
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 rotate-2 hover:rotate-0 transition duration-500">
+                        <div className="relative order-1 md:order-2 w-full">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 rotate-0 md:rotate-2 hover:rotate-0 transition duration-500 group">
                                 <img
                                     src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
                                     alt="Modern Interior"
-                                    className="w-full h-[500px] object-cover"
+                                    className="w-full h-[300px] md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                                 <div className="absolute bottom-6 left-6">
                                     <p className="text-white font-bold text-lg">Suite Eksklusif Tipe A</p>
-                                    <p className="text-neutral-300 text-sm">Mulai Rp 2.5jt / bulan</p>
+                                    <p className="text-sm text-neutral-300">Mulai Rp 2.5jt / bulan</p>
                                 </div>
                             </div>
-                            {/* Decorative Elements */}
-                            <div className="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl"></div>
-                            <div className="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
+                            {/* Decorative Elements - Hide on mobile to reduce clutter */}
+                            <div className="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl hidden md:block"></div>
+                            <div className="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl hidden md:block"></div>
                         </div>
                     </motion.div>
                 </AuroraBackground>
