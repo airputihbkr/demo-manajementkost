@@ -15,5 +15,5 @@
 }
 
 body {
-  @apply bg-neutral-950 text-white antialiased;
+  @apply bg-white dark:bg-black text-neutral-900 dark:text-white antialiased;
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuroraBackground } from '../components/ui/aurora-background';
+import { ModeToggle } from '../components/mode-toggle';
 import { db } from '../lib/db';
 import type { Room } from '../lib/db';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -22,10 +23,11 @@ export default function Home() {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white font-sans selection:bg-teal-500 selection:text-white">
+        <div className="min-h-screen bg-white dark:bg-black text-neutral-900 dark:text-white font-sans selection:bg-teal-500 selection:text-white">
+            <ModeToggle />
             {/* Hero Section */}
             <div className="relative min-h-screen w-full">
-                <AuroraBackground className="h-full">
+                <AuroraBackground className="h-full bg-white dark:bg-black text-neutral-900 dark:text-white">
                     <motion.div
                         initial={{ opacity: 0.0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -38,10 +40,10 @@ export default function Home() {
                     >
                         {/* Text Content */}
                         <div className="text-left order-2 md:order-1 flex flex-col justify-center">
-                            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6 leading-tight">
+                            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 dark:from-neutral-50 dark:to-neutral-400 mb-6 leading-tight">
                                 Lebih Dari Sekadar <br /> Tempat Tidur.
                             </h1>
-                            <p className="text-base md:text-lg text-neutral-300 mb-8 leading-relaxed">
+                            <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed">
                                 Rasakan pengalaman tinggal di <strong>Dirgantara Kost</strong>.
                                 Hunian eksklusif yang dirancang untuk produktivitas dan kenyamanan mutlak.
                                 Fasilitas hotel berbintang, kehangatan rumah sendiri.
@@ -56,7 +58,7 @@ export default function Home() {
                                 </a>
                                 <Link
                                     to="/login"
-                                    className="px-8 py-4 rounded-full border border-neutral-700 hover:bg-neutral-800 text-neutral-300 font-medium transition text-center"
+                                    className="px-8 py-4 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-300 font-medium transition text-center"
                                 >
                                     Login Pemilik
                                 </Link>
@@ -65,7 +67,7 @@ export default function Home() {
                             <div className="flex items-center gap-4 text-sm text-neutral-500 font-light hidden sm:flex">
                                 <div className="flex -space-x-2">
                                     {[1, 2, 3, 4].map(i => (
-                                        <div key={i} className="w-8 h-8 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center text-xs overflow-hidden">
+                                        <div key={i} className="w-8 h-8 rounded-full border-2 border-white dark:border-black bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center text-xs overflow-hidden">
                                             <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
                                         </div>
                                     ))}
@@ -76,7 +78,7 @@ export default function Home() {
 
                         {/* Hero Image */}
                         <div className="relative order-1 md:order-2 w-full flex items-center justify-center">
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 rotate-0 md:rotate-2 hover:rotate-0 transition duration-500 group w-full">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 rotate-0 md:rotate-2 hover:rotate-0 transition duration-500 group w-full">
                                 <img
                                     src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
                                     alt="Modern Interior"
@@ -89,8 +91,8 @@ export default function Home() {
                                 </div>
                             </div>
                             {/* Decorative Elements - Hide on mobile to reduce clutter */}
-                            <div className="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl hidden md:block"></div>
-                            <div className="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl hidden md:block"></div>
+                            <div className="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl hidden md:block opacity-50 dark:opacity-100"></div>
+                            <div className="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl hidden md:block opacity-50 dark:opacity-100"></div>
                         </div>
                     </motion.div>
                 </AuroraBackground>
@@ -98,13 +100,13 @@ export default function Home() {
             </div>
 
             {/* Why Choose Us Section */}
-            <div className="bg-neutral-900/50 py-20 px-4 border-y border-neutral-800">
+            <div className="bg-neutral-50 dark:bg-neutral-900/50 py-20 px-4 border-y border-neutral-200 dark:border-neutral-800">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-emerald-600 mb-4">
+                        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-emerald-700 dark:from-teal-400 dark:to-emerald-600 mb-4">
                             Kenapa Memilih Dirgantara?
                         </h2>
-                        <p className="text-neutral-400 max-w-2xl mx-auto">
+                        <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
                             Kami menyediakan lebih dari sekadar tempat istirahat. Nikmati fasilitas umum yang menunjang gaya hidup modern Anda, tanpa biaya tambahan.
                         </p>
                     </div>
@@ -142,12 +144,12 @@ export default function Home() {
                                 desc: "Tim teknisi in-house siap sedia menangani kerusakan AC, listrik, atau plumbing dengan cepat."
                             }
                         ].map((feature, idx) => (
-                            <div key={idx} className="group p-6 rounded-2xl bg-black border border-neutral-800 hover:border-teal-500/50 hover:bg-neutral-900 transition duration-300">
-                                <div className="p-3 bg-neutral-900 rounded-lg w-fit mb-4 group-hover:scale-110 transition duration-300 border border-neutral-800 group-hover:border-teal-500/30">
+                            <div key={idx} className="group p-6 rounded-2xl bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 hover:border-teal-500/50 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition duration-300 shadow-sm dark:shadow-none">
+                                <div className="p-3 bg-neutral-100 dark:bg-neutral-900 rounded-lg w-fit mb-4 group-hover:scale-110 transition duration-300 border border-neutral-200 dark:border-neutral-800 group-hover:border-teal-500/30">
                                     {feature.icon}
                                 </div>
-                                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-teal-400 transition">{feature.title}</h3>
-                                <p className="text-neutral-400 text-sm leading-relaxed">
+                                <h3 className="text-xl font-bold mb-2 text-neutral-800 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition">{feature.title}</h3>
+                                <p className="text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
                                     {feature.desc}
                                 </p>
                             </div>
@@ -157,13 +159,13 @@ export default function Home() {
             </div>
 
             <div id="catalog" className="max-w-7xl mx-auto px-4 py-20">
-                <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+                <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 to-neutral-500 dark:from-neutral-50 dark:to-neutral-400">
                     Kamar Tersedia
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {rooms?.map((room) => (
-                        <div key={room.id} className="bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 hover:border-teal-500 transition duration-300">
+                        <div key={room.id} className="bg-white dark:bg-neutral-900 rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 hover:border-teal-500 transition duration-300 shadow-sm dark:shadow-none">
                             <div className="h-48 overflow-hidden">
                                 <img src={room.fotoUrl} alt={room.nomor_kamar} className="w-full h-full object-cover hover:scale-110 transition duration-500" />
                             </div>
@@ -200,36 +202,36 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="bg-neutral-900 py-20 px-4">
+            <div className="bg-neutral-50 dark:bg-neutral-900 py-20 px-4">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 className="text-3xl font-bold mb-6 text-teal-500">Lokasi Strategis</h2>
-                        <p className="text-neutral-300 mb-6 text-lg leading-relaxed">
+                        <h2 className="text-3xl font-bold mb-6 text-teal-600 dark:text-teal-500">Lokasi Strategis</h2>
+                        <p className="text-neutral-600 dark:text-neutral-300 mb-6 text-lg leading-relaxed">
                             Terletak di jantung kota, dekat dengan pusat bisnis dan kampus ternama.
                             Akses mudah ke transportasi umum dan pusat perbelanjaan.
                         </p>
                         <div className="space-y-4">
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-black rounded-lg text-teal-500">
+                                <div className="p-3 bg-white dark:bg-black rounded-lg text-teal-600 dark:text-teal-500 shadow-sm dark:shadow-none border border-neutral-200 dark:border-neutral-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">Alamat Lengkap</h4>
-                                    <p className="text-neutral-400">Jl. Mawar Melati Indah No. 88, Kemang, Jakarta Selatan, 12730</p>
+                                    <h4 className="font-bold text-neutral-900 dark:text-white">Alamat Lengkap</h4>
+                                    <p className="text-neutral-600 dark:text-neutral-400">Jl. Mawar Melati Indah No. 88, Kemang, Jakarta Selatan, 12730</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-black rounded-lg text-teal-500">
+                                <div className="p-3 bg-white dark:bg-black rounded-lg text-teal-600 dark:text-teal-500 shadow-sm dark:shadow-none border border-neutral-200 dark:border-neutral-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-navigation"><polygon points="3 11 22 2 13 21 11 13 3 11" /></svg>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">Petunjuk Arah</h4>
-                                    <p className="text-neutral-400">5 menit dari MRT Blok M, tepat di belakang Grand Lucky Supermarket.</p>
+                                    <h4 className="font-bold text-neutral-900 dark:text-white">Petunjuk Arah</h4>
+                                    <p className="text-neutral-600 dark:text-neutral-400">5 menit dari MRT Blok M, tepat di belakang Grand Lucky Supermarket.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="h-[400px] w-full rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition duration-500 border border-neutral-800">
+                    <div className="h-[400px] w-full rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition duration-500 border border-neutral-200 dark:border-neutral-800 shadow-lg">
                         {/* Placeholder Map - In real app, use Google Maps Embed */}
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.059275062637!2d106.80963531476932!3d-6.255925995471676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f17d3375c333%3A0x6b2e3f0f7f3f3f3f!2sKemang%2C%20Jakarta%20Selatan!5e0!3m2!1sen!2sid!4v1625633845014!5m2!1sen!2sid"
@@ -243,7 +245,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <footer className="bg-black py-8 text-center text-neutral-600 border-t border-neutral-900">
+            <footer className="bg-white dark:bg-black py-8 text-center text-neutral-500 dark:text-neutral-600 border-t border-neutral-200 dark:border-neutral-900">
                 <p>&copy; Dirgintara Kost Eksklusif Management. All rights reserved.</p>
             </footer>
 
