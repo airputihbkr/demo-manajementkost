@@ -34,7 +34,7 @@ export default function Home() {
                             duration: 0.8,
                             ease: "easeInOut",
                         }}
-                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center h-full py-24 md:py-0"
+                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center py-24 md:py-0"
                     >
                         {/* Text Content */}
                         <div className="text-left order-2 md:order-1">
