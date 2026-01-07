@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { HeroParallax } from '../components/ui/hero-parallax';
+import { Link } from 'react-router-dom';
+import { AuroraBackground } from '../components/ui/aurora-background';
 import { db } from '../lib/db';
 import type { Room } from '../lib/db';
 import { useLiveQuery } from 'dexie-react-hooks';
@@ -12,23 +13,7 @@ export default function Home() {
     const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
     const [rentDuration, setRentDuration] = useState(1);
 
-    const heroProducts = [
-        { title: "Kamar Premium A", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=2069" },
-        { title: "Kamar Deluxe B", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1598928636135-d146006ff4be?q=80&w=2070" },
-        { title: "Kamar Standard C", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2069" },
-        { title: "Kamar Suite D", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2070" },
-        { title: "Kamar Economy E", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=2057" },
-        { title: "Ruang Bersama", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1522771753035-48482f1b3113?q=80&w=2069" },
-        { title: "Fasilitas Gym", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" },
-        { title: "Kamar Mandi Mewah", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=2070" },
-        { title: "Dapur Bersih", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1556912173-3db9963eecc4?q=80&w=2070" },
-        { title: "Taman Belakang", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1558293842-c0fd3db86157?q=80&w=2070" },
-        { title: "Parkir Luas", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=2070" },
-        { title: "Keamanan 24 Jam", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1557597774-9d273605dfa6?q=80&w=2070" },
-        { title: "WiFi Kencang", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1563770095-5dd2c0c7d3c0?q=80&w=2070" },
-        { title: "Ruang Tamu", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=2070" },
-        { title: "Rooftop Garden", link: "#catalog", thumbnail: "https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=2069" },
-    ];
+
 
     const handleBooking = (room: Room) => {
         const total = room.harga * rentDuration;
@@ -38,7 +23,54 @@ export default function Home() {
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-teal-500 selection:text-white">
-            <HeroParallax products={heroProducts} />
+            {/* Hero Section */}
+            <div className="relative h-screen w-full">
+                <AuroraBackground className="h-full">
+                    <motion.div
+                        initial={{ opacity: 0.0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.3,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                        }}
+                        className="relative flex flex-col gap-4 items-center justify-center px-4"
+                    >
+                        <div className="text-center max-w-4xl mx-auto z-10">
+                            <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6">
+                                Kost Eksklusif <br /> Kenyamanan Premium
+                            </h1>
+                            <p className="text-base md:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Temukan hunian kos modern dengan fasilitas lengkap, desain estetik,
+                                dan manajemen profesional. Hidup lebih nyaman, fokus lebih terjaga.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <a
+                                    href="#catalog"
+                                    className="px-8 py-3 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-lg shadow-teal-500/20"
+                                >
+                                    Lihat Kamar
+                                </a>
+                                <Link
+                                    to="/login"
+                                    className="px-8 py-3 rounded-full border border-neutral-700 hover:bg-neutral-800 text-neutral-300 font-medium transition"
+                                >
+                                    Login Pemilik
+                                </Link>
+                            </div>
+
+                            <p className="text-xs text-neutral-500 mt-6 italic">
+                                * Ingin melihat demo admin? Klik "Login Pemilik"
+                            </p>
+                        </div>
+                    </motion.div>
+                </AuroraBackground>
+                {/* Scroll Indicator */}
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-neutral-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
+                </div>
+            </div>
 
             <div id="catalog" className="max-w-7xl mx-auto px-4 py-20">
                 <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
