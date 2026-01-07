@@ -49,19 +49,24 @@ export default function Home() {
                                 Fasilitas hotel berbintang, kehangatan rumah sendiri.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                            <div className="flex flex-col sm:flex-row gap-4 mb-8 items-start">
                                 <a
                                     href="#catalog"
-                                    className="px-8 py-4 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-lg shadow-teal-500/20 text-center"
+                                    className="px-8 py-4 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-lg shadow-teal-500/20 text-center w-full sm:w-auto"
                                 >
                                     Pilih Kamar Anda
                                 </a>
-                                <Link
-                                    to="/login"
-                                    className="px-8 py-4 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-300 font-medium transition text-center"
-                                >
-                                    Login Pemilik
-                                </Link>
+                                <div className="flex flex-col gap-2 w-full sm:w-auto">
+                                    <Link
+                                        to="/login"
+                                        className="px-8 py-4 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-600 dark:text-neutral-300 font-medium transition text-center"
+                                    >
+                                        Login Pemilik
+                                    </Link>
+                                    <p className="text-[10px] text-neutral-500 dark:text-neutral-400 italic text-center">
+                                        *Ingin liat demo dashboard admin owner? Klik button ini
+                                    </p>
+                                </div>
                             </div>
 
                             <div className="flex items-center gap-4 text-sm text-neutral-500 font-light hidden sm:flex">
