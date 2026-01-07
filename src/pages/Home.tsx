@@ -24,7 +24,7 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-teal-500 selection:text-white">
             {/* Hero Section */}
-            <div className="relative h-screen w-full">
+            <div className="relative min-h-screen w-full">
                 <AuroraBackground className="h-full">
                     <motion.div
                         initial={{ opacity: 0.0, y: 40 }}
@@ -34,40 +34,68 @@ export default function Home() {
                             duration: 0.8,
                             ease: "easeInOut",
                         }}
-                        className="relative flex flex-col gap-4 items-center justify-center px-4"
+                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center h-full py-20 md:py-0"
                     >
-                        <div className="text-center max-w-4xl mx-auto z-10">
-                            <h1 className="text-4xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6">
-                                Kost Eksklusif <br /> Kenyamanan Premium
+                        {/* Text Content */}
+                        <div className="text-left">
+                            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 mb-6 leading-tight">
+                                Lebih Dari Sekadar <br /> Tempat Tidur.
                             </h1>
-                            <p className="text-base md:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                                Temukan hunian kos modern dengan fasilitas lengkap, desain estetik,
-                                dan manajemen profesional. Hidup lebih nyaman, fokus lebih terjaga.
+                            <p className="text-base md:text-lg text-neutral-300 mb-8 leading-relaxed">
+                                Rasakan pengalaman tinggal di <strong>Dirgantara Kost</strong>.
+                                Hunian eksklusif yang dirancang untuk produktivitas dan kenyamanan mutlak.
+                                Fasilitas hotel berbintang, kehangatan rumah sendiri.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
                                 <a
                                     href="#catalog"
-                                    className="px-8 py-3 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-lg shadow-teal-500/20"
+                                    className="px-8 py-3 rounded-full bg-teal-600 hover:bg-teal-500 text-white font-bold transition shadow-lg shadow-teal-500/20 text-center"
                                 >
-                                    Lihat Kamar
+                                    Pilih Kamar Anda
                                 </a>
                                 <Link
                                     to="/login"
-                                    className="px-8 py-3 rounded-full border border-neutral-700 hover:bg-neutral-800 text-neutral-300 font-medium transition"
+                                    className="px-8 py-3 rounded-full border border-neutral-700 hover:bg-neutral-800 text-neutral-300 font-medium transition text-center"
                                 >
                                     Login Pemilik
                                 </Link>
                             </div>
 
-                            <p className="text-xs text-neutral-500 mt-6 italic">
-                                * Ingin melihat demo admin? Klik "Login Pemilik"
-                            </p>
+                            <div className="flex items-center gap-4 text-sm text-neutral-500 font-light">
+                                <div className="flex -space-x-2">
+                                    {[1, 2, 3, 4].map(i => (
+                                        <div key={i} className="w-8 h-8 rounded-full border-2 border-black bg-neutral-800 flex items-center justify-center text-xs overflow-hidden">
+                                            <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
+                                        </div>
+                                    ))}
+                                </div>
+                                <p>Bergabung dengan 100+ penghuni bahagia lainnya.</p>
+                            </div>
+                        </div>
+
+                        {/* Hero Image */}
+                        <div className="relative hidden md:block">
+                            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 rotate-2 hover:rotate-0 transition duration-500">
+                                <img
+                                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+                                    alt="Modern Interior"
+                                    className="w-full h-[500px] object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                                <div className="absolute bottom-6 left-6">
+                                    <p className="text-white font-bold text-lg">Suite Eksklusif Tipe A</p>
+                                    <p className="text-neutral-300 text-sm">Mulai Rp 2.5jt / bulan</p>
+                                </div>
+                            </div>
+                            {/* Decorative Elements */}
+                            <div className="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-teal-500/20 rounded-full blur-3xl"></div>
+                            <div className="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"></div>
                         </div>
                     </motion.div>
                 </AuroraBackground>
                 {/* Scroll Indicator */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-neutral-500">
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-neutral-500 z-20">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 5v14" /><path d="m19 12-7 7-7-7" /></svg>
                 </div>
             </div>
