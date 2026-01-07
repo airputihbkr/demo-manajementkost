@@ -100,6 +100,65 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* Why Choose Us Section */}
+            <div className="bg-neutral-900/50 py-20 px-4 border-y border-neutral-800">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-emerald-600 mb-4">
+                            Kenapa Memilih Dirgantara?
+                        </h2>
+                        <p className="text-neutral-400 max-w-2xl mx-auto">
+                            Kami menyediakan lebih dari sekadar tempat istirahat. Nikmati fasilitas umum yang menunjang gaya hidup modern Anda, tanpa biaya tambahan.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {[
+                            {
+                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" /><path d="m9 12 2 2 4-4" /></svg>,
+                                title: "Keamanan 24/7",
+                                desc: "Sistem keamanan CCTV 24 jam dan penjaga keamanan profesional menjamin ketenangan pikiran Anda."
+                            },
+                            {
+                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M5 12.55a11 11 0 0 1 14.08 0" /><path d="M1.42 9a16 16 0 0 1 21.16 0" /><path d="M8.53 16.11a6 6 0 0 1 6.95 0" /><line x1="12" y1="20" x2="12.01" y2="20" /></svg>,
+                                title: "High-Speed WiFi",
+                                desc: "Internet fiber optic berkecepatan tinggi dedicated untuk setiap lantai. Work from home tanpa hambatan."
+                            },
+                            {
+                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" /><circle cx="7" cy="17" r="2" /><path d="M9 17h6" /><circle cx="17" cy="17" r="2" /></svg>,
+                                title: "Parkir Luas",
+                                desc: "Area parkir mobil dan motor yang luas, tertutup kanopi, dan diawasi kamera pengawas."
+                            },
+                            {
+                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M3 14h18" /><path d="M4 14h16v-4h-3.4c-.6-1.5-3-3-3-3l-2.1-.7c-2.3-.8-4.7 1-4.7 3.4V14z" /><path d="M4 14h16v4h-3.4c-.6 1.5-3 3-3 3l-2.1.7c-2.3.8-4.7-1-4.7-3.4V14z" /></svg>,
+                                title: "Dapur Bersama",
+                                desc: "Dapur modern lengkap dengan kulkas, kompor, microwave, dan dispenser air minum gratis."
+                            },
+                            {
+                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><circle cx="12" cy="12" r="10" /><path d="m15 9-6 6" /><path d="m9 9 6 6" /></svg>,
+                                title: "Laundry & Cleaning",
+                                desc: "Layanan laundry kiloan pickup-delivery dan pembersihan kamar mandi mingguan (opsional)."
+                            },
+                            {
+                                icon: <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-500"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.09a2 2 0 0 1-1-1.74v-.47a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /><circle cx="12" cy="12" r="3" /></svg>,
+                                title: "Maintenance Cepat",
+                                desc: "Tim teknisi in-house siap sedia menangani kerusakan AC, listrik, atau plumbing dengan cepat."
+                            }
+                        ].map((feature, idx) => (
+                            <div key={idx} className="group p-6 rounded-2xl bg-black border border-neutral-800 hover:border-teal-500/50 hover:bg-neutral-900 transition duration-300">
+                                <div className="p-3 bg-neutral-900 rounded-lg w-fit mb-4 group-hover:scale-110 transition duration-300 border border-neutral-800 group-hover:border-teal-500/30">
+                                    {feature.icon}
+                                </div>
+                                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-teal-400 transition">{feature.title}</h3>
+                                <p className="text-neutral-400 text-sm leading-relaxed">
+                                    {feature.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
             <div id="catalog" className="max-w-7xl mx-auto px-4 py-20">
                 <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
                     Kamar Tersedia
