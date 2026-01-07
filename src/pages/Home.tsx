@@ -34,7 +34,7 @@ export default function Home() {
                             duration: 0.8,
                             ease: "easeInOut",
                         }}
-                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center justify-center min-h-[calc(100vh-80px)]"
+                        className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end justify-center h-screen pb-20 md:pb-32"
                     >
                         {/* Text Content */}
                         <div className="text-left order-2 md:order-1 flex flex-col justify-center">
